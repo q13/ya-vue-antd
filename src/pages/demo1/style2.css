@@ -1,0 +1,9 @@
+/**
+ * Demo样式
+ */
+.test{
+      width: calc(5px + 20%)
+      color: blue
+      height: 60rem;
+      animation: 1s rainbow;
+    

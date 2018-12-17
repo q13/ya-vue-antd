@@ -1,0 +1,67 @@
+{
+  "name": "ya-vue-antd",
+  "description": "The vue Implementation transform antd components interfaces on runtime",
+  "version": "0.0.1-alpha.1",
+  "author": "q13 <qsimon13@gmail.com>",
+  "main": "./index.js",
+  "scripts": {
+    "serve": "ya2 serve . --mock",
+    "dev": "ya2 serve . --mock",
+    "build": "ya2 build . --app-env local",
+    "build-local": "ya2 build . --app-env local --sdk",
+    "acc": "ya2 acc .",
+    "dll": "ya2 acc .",
+    "eslint": "ya2 eslint .",
+    "test": "ya2 test . --mode development",
+    "api": "ya2 api ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/q13/ya-vue-antd.git"
+  },
+  "dependencies": {
+    "ya-turbine": "^0.0.1-alpha.0"
+  },
+  "devDependencies": {},
+  "application": {
+    "jsdoc": {
+      "files": [{
+        "pattern": "src/widgets/**/*.*"
+      }]
+    },
+    "template": {
+      "title": "Demo",
+      "window": {},
+      "scripts": [],
+      "links": []
+    },
+    "proxyTable": {
+      "/test": {
+        "target": "https://cs-t.4008827123.cn/",
+        "pathRewrite": {
+          "^/test": "/"
+        },
+        "changeOrigin": true
+      },
+      "/aa": {
+        "target": "http://127.0.0.1:3001/",
+        "pathRewrite": {
+          "^/aa": "/"
+        },
+        "changeOrigin": true
+      }
+    }
+  },
+  "peerDependencies": {
+    "eslint": "5.5.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-friendly-formatter": "4.0.1",
+    "eslint-loader": "2.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "7.0.1",
+    "eslint-plugin-promise": "4.0.0",
+    "eslint-plugin-standard": "4.0.0",
+    "eslint-plugin-vue": "5.0.0-beta.3",
+    "babel-eslint": "9.0.0"
+  }
+}

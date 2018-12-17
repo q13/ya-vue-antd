@@ -1,0 +1,17 @@
+/**
+ * Demo样式
+ */
+:local .cpt {
+  :global {
+    .test {
+      width: calc(5px + 30%);
+      color: #ff0000;
+      animation: 1s rainbow;
+    }
+    @keyframes rainbow {
+      0% { background: #c00; }
+      50% { background: orange; }
+      100% { background: yellowgreen; }
+    }
+  }
+}

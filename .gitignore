@@ -59,3 +59,22 @@ typings/
 
 # next.js build output
 .next
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode
+
+# project
+dll/
+dist/
+.history/
+coverage/
+jsconfig.json
+package-lock.json
+.eslintignore
+.eslintrc
+# yarn.lock 通过yarn锁版本
