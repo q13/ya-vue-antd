@@ -1,6 +1,6 @@
 <template>
   <div class="welcome-body">
-    Hey guy! Here is A SPA project framework.
+    The vue Implementation transform antd components interfaces on runtime
   </div>
 </template>
 

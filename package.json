@@ -20,14 +20,18 @@
     "url": "https://github.com/q13/ya-vue-antd.git"
   },
   "dependencies": {
+    "antd": "^3.11.2",
+    "antd-mobile": "^2.2.6",
     "ya-turbine": "^0.0.1-alpha.0"
   },
   "devDependencies": {},
   "application": {
     "jsdoc": {
-      "files": [{
-        "pattern": "src/widgets/**/*.*"
-      }]
+      "files": [
+        {
+          "pattern": "src/widgets/**/*.*"
+        }
+      ]
     },
     "template": {
       "title": "Demo",
@@ -53,6 +57,7 @@
     }
   },
   "peerDependencies": {
+    "babel-eslint": "9.0.0",
     "eslint": "5.5.0",
     "eslint-config-standard": "12.0.0",
     "eslint-friendly-formatter": "4.0.1",
@@ -61,7 +66,6 @@
     "eslint-plugin-node": "7.0.1",
     "eslint-plugin-promise": "4.0.0",
     "eslint-plugin-standard": "4.0.0",
-    "eslint-plugin-vue": "5.0.0-beta.3",
-    "babel-eslint": "9.0.0"
+    "eslint-plugin-vue": "5.0.0-beta.3"
   }
 }

@@ -1,0 +1,4 @@
+/**
+ * Antd style
+ */
+@import "antd/lib/button/style/index.css"; /* 不加~,由postcss-import处理 https://github.com/postcss/postcss-import */
