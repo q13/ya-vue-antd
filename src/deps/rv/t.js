@@ -101,7 +101,13 @@ export default function (R) {
           } = getNormalizeProps(attrs);
           // 组装成react props
           var reactProps = {
-            ...restAttrs,
+            // Like on-click transform to onClick
+            ...Object.keys(restAttrs).reduce((pv, cv) => {
+              return {
+                ...pv,
+                [camelCase(cv)]: restAttrs[cv]
+              };
+            }, {}),
             ref: reactRef // 重命名react component ref
           };
           Object.keys(listeners).forEach((eventName) => {
@@ -145,10 +151,19 @@ export default function (R) {
   }
   return V;
 };
-
+/**
+ * 转驼峰式
+ * @param {string} str - string
+ */
+function camelCase(str) {
+  str = str.toLowerCase().replace(/(?:(^.)|([-_\s]+.))/g, function (match) {
+    return match.charAt(match.length - 1).toUpperCase();
+  });
+  return str.charAt(0).toLowerCase() + str.substring(1);
+}
 /**
  * 首字母大写
- * @param {String} str - string
+ * @param {string} str - string
  */
 function capitalize(str) {
   const [first, ...rest] = str;
@@ -157,7 +172,7 @@ function capitalize(str) {
 /**
  * 标准化class
  * @param {Mix} value - 混合类型，可能是string/object/array
- * @param {String} type - vue/react
+ * @param {string} type - vue/react
  */
 function getNormalizeClass(value, type = 'vue') {
   var result = {};
@@ -187,7 +202,7 @@ function getNormalizeClass(value, type = 'vue') {
 
 /**
  * 标准化属性
- * @param {Object} props - 待格式化属性
+ * @param {object} props - 待格式化属性
  */
 function getNormalizeProps(props) {
   const extraKeys = new Map([
