@@ -1,5 +1,8 @@
 <template>
-  <antd-button :on-click="handleClick" :loading="true">Test</antd-button>
+  <div class="antd-button">
+    <antd-button :on-click="handleClick">Button1</antd-button>
+    <antd-button type="primary" :loading="true">Button2</antd-button>
+  </div>
 </template>
 <script>
 import '@/widgets/antd/components/button/styles/antd.css';

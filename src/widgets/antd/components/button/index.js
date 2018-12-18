@@ -7,7 +7,10 @@
  */
 import Button from 'antd/lib/button';
 import t from '@/deps/rv/t';
-const Button_ = t(Button);
+const Button_ = t(Button, {
+  innerTag: 'span',
+  outerTag: 'span'
+});
 /**
  * 商户选中回调
  * @callback onClick

@@ -79,8 +79,9 @@ class C extends React.Component {
 }
 /**
  * 返回转换函数
+ * @param {object} defaultProps - 默认props
  */
-export default function (R) {
+export default function (R, defaultProps = {}) {
   var V = store.get(R);
   if (!V) {
     V = Vue.extend({
@@ -98,16 +99,10 @@ export default function (R) {
             innerClass,
             reactRef,
             ...restAttrs
-          } = getNormalizeProps(attrs);
+          } = getNormalizeProps(attrs, defaultProps);
           // 组装成react props
           var reactProps = {
-            // Like on-click transform to onClick
-            ...Object.keys(restAttrs).reduce((pv, cv) => {
-              return {
-                ...pv,
-                [camelCase(cv)]: restAttrs[cv]
-              };
-            }, {}),
+            ...restAttrs,
             ref: reactRef // 重命名react component ref
           };
           Object.keys(listeners).forEach((eventName) => {
@@ -141,7 +136,7 @@ export default function (R) {
         const {
           outerTag = 'div',
           outerClass = ''
-        } = getNormalizeProps(this.$attrs);
+        } = getNormalizeProps(this.$attrs, defaultProps);
         return h(outerTag, {
           ref: 'r',
           class: getNormalizeClass(outerClass)
@@ -152,14 +147,13 @@ export default function (R) {
   return V;
 };
 /**
- * 转驼峰式
+ * 中划线转驼峰式
  * @param {string} str - string
  */
-function camelCase(str) {
-  str = str.toLowerCase().replace(/(?:(^.)|([-_\s]+.))/g, function (match) {
-    return match.charAt(match.length - 1).toUpperCase();
+function strike2camelCase(str) {
+  return (str + '').replace(/-\D/g, function (match) {
+    return match.charAt(1).toUpperCase();
   });
-  return str.charAt(0).toLowerCase() + str.substring(1);
 }
 /**
  * 首字母大写
@@ -204,24 +198,33 @@ function getNormalizeClass(value, type = 'vue') {
  * 标准化属性
  * @param {object} props - 待格式化属性
  */
-function getNormalizeProps(props) {
-  const extraKeys = new Map([
-    ['outer-tag', 'outerTag'],
-    ['outer-class', 'outerClass'],
-    ['inner-tag', 'innerTag'],
-    ['inner-class', 'innerClass']
-  ]);
+function getNormalizeProps(props, defaultProps = {}) {
+  // Like on-click transform to onClick
   return Object.keys(props).reduce((pv, cv) => {
-    if (extraKeys.has(cv)) {
-      return {
-        ...pv,
-        [extraKeys.get(cv)]: props[cv]
-      };
-    } else {
-      return {
-        ...pv,
-        [cv]: props[cv]
-      };
-    }
-  }, {});
+    return {
+      ...pv,
+      [strike2camelCase(cv)]: props[cv]
+    };
+  }, {
+    ...defaultProps
+  });
+  // const extraKeys = new Map([
+  //   ['outer-tag', 'outerTag'],
+  //   ['outer-class', 'outerClass'],
+  //   ['inner-tag', 'innerTag'],
+  //   ['inner-class', 'innerClass']
+  // ]);
+  // return Object.keys(props).reduce((pv, cv) => {
+  //   if (extraKeys.has(cv)) {
+  //     return {
+  //       ...pv,
+  //       [extraKeys.get(cv)]: props[cv]
+  //     };
+  //   } else {
+  //     return {
+  //       ...pv,
+  //       [cv]: props[cv]
+  //     };
+  //   }
+  // }, {});
 }
