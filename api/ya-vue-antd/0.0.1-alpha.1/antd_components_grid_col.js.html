@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>antd-mobile/index.js - Documentation</title>
+    <title>antd/components/grid/col.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">antd-mobile/index.js</h1>
+    <h1 class="page-title">antd/components/grid/col.js</h1>
     
 
     
@@ -40,11 +40,19 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Antd-mobile components for wide screen
- * @namespace YC.antdMobile
+ * Col（栅格）
+ * @module antd/col
+ * @example
+ * import Col from 'ya-vue-antd/src/widgets/antd/components/col';
+ * // See [示例入口]{@link http://#/antd/grid}
  */
-const value = true;
-export default value;
+import t from '@/deps/rv/t';
+import Col from 'antd/lib/col';
+
+/**
+ * @vue-prop {number} [offset=0] - 栅格左侧的间隔格数，间隔内不可以有栅格
+ */
+export default t(Col);
 </code></pre>
         </article>
     </section>

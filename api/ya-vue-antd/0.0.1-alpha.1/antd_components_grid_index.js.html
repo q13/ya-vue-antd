@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>antd-mobile/index.js - Documentation</title>
+    <title>antd/components/grid/index.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">antd-mobile/index.js</h1>
+    <h1 class="page-title">antd/components/grid/index.js</h1>
     
 
     
@@ -40,11 +40,18 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Antd-mobile components for wide screen
- * @namespace YC.antdMobile
+ * Grid 栅格
+ * @namespace YC.antd.grid
+ * @property {Component} Row - {@link module:antd/row}
+ * @property {Component} Col - {@link module:antd/col}
  */
-const value = true;
-export default value;
+import Row from './row';
+import Col from './col';
+
+export {
+  Row,
+  Col
+};
 </code></pre>
         </article>
     </section>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Transform react component to vue component
  */
@@ -8,6 +9,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Vue from 'vue';
+import Item from 'antd/lib/list/Item';
 
 var store = new Map(); // 存储转换过的组件类，不重复生成
 
@@ -22,7 +24,7 @@ class C extends React.Component {
   }
   renderVueComponent() {
     const props = this.props;
-    const slot = props.slot;
+    const slot = props.slot; // vue slot
     let vueComponent = this.vueComponent;
     if (!vueComponent) {
       const el = this.v;
@@ -79,12 +81,18 @@ class C extends React.Component {
 }
 /**
  * 返回转换函数
- * @param {object} defaultProps - 默认props
+ * @param {object} options - 配置项
  */
-export default function (R, defaultProps = {}) {
+export default function (R, options) {
+  options = {
+    defaultProps: {}, // 默认prop
+    enableInnerStrip: true, // 默认把Vue children里的文本和react组件直接作为R children渲染
+    ...(options || {})
+  };
   var V = store.get(R);
   if (!V) {
     V = Vue.extend({
+      Reactor: R,
       inheritAttrs: false, // class/style except
       methods: {
         renderReactComponent() {
@@ -99,7 +107,7 @@ export default function (R, defaultProps = {}) {
             innerClass,
             reactRef,
             ...restAttrs
-          } = getNormalizeProps(attrs, defaultProps);
+          } = getNormalizeProps(attrs, options.defaultProps);
           // 组装成react props
           var reactProps = {
             ...restAttrs,
@@ -108,16 +116,66 @@ export default function (R, defaultProps = {}) {
           Object.keys(listeners).forEach((eventName) => {
             reactProps['on' + capitalize(eventName)] = listeners[eventName];
           });
-          let c = null;
-          // let e = null;
-          if (slot) {
-            c = React.createElement(C, {
+          // 短路，把Vue children里的文本和react组件直接作为R children渲染
+          let reactChildren = null;
+          if (options.enableInnerStrip) {
+            reactChildren = (function applyChildren({
+              children,
+              innerTag,
+              innerClass
+            }) {
+              return children ? children.map((child) => {
+                if (typeof child.tag === 'undefined' && typeof child.text === 'undefined') { // 认为是无效vnode
+                  return null;
+                }
+                if (typeof child.tag === 'undefined' && !!child.text) { // 认为是纯文本
+                  return child.text;
+                } else {
+                  const componentOptions = child.componentOptions;
+                  if (componentOptions) {
+                    const Reactor = child.componentOptions.Ctor.options.Reactor; // 可能中间值有undefined出现
+                    if (Reactor) { // 认为是React component
+                      const attrs = child.data.attrs || {};
+                      const {
+                        innerTag,
+                        innerClass,
+                        reactRef,
+                        ...restAttrs
+                      } = getNormalizeProps(attrs);
+                      return React.createElement(Reactor, {
+                        ...restAttrs,
+                        ref: reactRef
+                      }, applyChildren({
+                        children: componentOptions.children,
+                        innerTag,
+                        innerClass
+                      }));
+                    }
+                  }
+                }
+                // 默认认为是Vue component，需要转换成React component，不用考虑deep children问题，C会处理
+                return React.createElement(C, {
+                  slot: children,
+                  innerTag,
+                  innerClass
+                }, null);
+              }).filter((item) => { // 过滤有效vnode
+                return !!Item;
+              }) : null;
+            })({
+              children: slot,
+              innerTag,
+              innerClass
+            }); 
+          } else { // 把Vue slot转成 React component再传递给C
+            reactChildren = slot ? React.createElement(C, {
               slot,
               innerTag,
               innerClass
-            }, null);
+            }, null) : null;
           }
-          const r = React.createElement(R, reactProps, c);
+          // debugger;
+          const r = React.createElement(R, reactProps, reactChildren);
           this.$r = r; // 保存react引用
           return ReactDOM.render(r, this.$refs.r);
         }
@@ -136,7 +194,7 @@ export default function (R, defaultProps = {}) {
         const {
           outerTag = 'div',
           outerClass = ''
-        } = getNormalizeProps(this.$attrs, defaultProps);
+        } = getNormalizeProps(this.$attrs, options.defaultProps);
         return h(outerTag, {
           ref: 'r',
           class: getNormalizeClass(outerClass)
@@ -208,23 +266,4 @@ function getNormalizeProps(props, defaultProps = {}) {
   }, {
     ...defaultProps
   });
-  // const extraKeys = new Map([
-  //   ['outer-tag', 'outerTag'],
-  //   ['outer-class', 'outerClass'],
-  //   ['inner-tag', 'innerTag'],
-  //   ['inner-class', 'innerClass']
-  // ]);
-  // return Object.keys(props).reduce((pv, cv) => {
-  //   if (extraKeys.has(cv)) {
-  //     return {
-  //       ...pv,
-  //       [extraKeys.get(cv)]: props[cv]
-  //     };
-  //   } else {
-  //     return {
-  //       ...pv,
-  //       [cv]: props[cv]
-  //     };
-  //   }
-  // }, {});
 }

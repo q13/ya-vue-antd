@@ -1,6 +1,6 @@
 /**
- * Antd button style
+ * Antd grid style
  * css文件import不加~,由postcss-import处理 https://github.com/postcss/postcss-import
  */
 @import "antd/lib/style/index.css";
-@import "antd/lib/button/style/index.css";
+@import "antd/lib/grid/style/index.css";
