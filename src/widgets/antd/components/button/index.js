@@ -6,7 +6,11 @@
  * // See [示例入口]{@link http://#/antd/button}
  */
 /**
- * 商户选中回调
+ * Class
+ * @typedef {Vue} Button
+ */
+/**
+ * 按钮点击回调
  * @callback onClick
  * @param {ReactEvent} event - Click点击事件
  */

@@ -5,6 +5,10 @@
  * import Row from 'ya-vue-antd/src/widgets/antd/components/row';
  * // See [示例入口]{@link http://#/antd/grid}
  */
+/**
+ * Class
+ * @typedef {Vue} Row
+ */
 import t from '@/deps/rv/t';
 import Row from 'antd/lib/row';
 
