@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>antd/menu - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-antd_button.html">antd/button</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-antd_col.html">antd/col</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-antd_menu.html">antd/menu</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-antd_row.html">antd/row</a></span></li><li class="nav-heading">Namespaces</li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="YC.html">YC</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="YC.antd.html">antd</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="YC.antd.grid.html">grid</a></span></li><li class="nav-heading"><span class="nav-item-type type-namespace">N</span><span class="nav-item-name"><a href="YC.antdMobile.html">antdMobile</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">antd/menu</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>导航菜单（Menu）</p></div>
+        
+
+        
+            
+<div class="section-method">
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="antd_components_menu_index.js.html">antd/components/menu/index.js</a>, <a href="antd_components_menu_index.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-examples">
+<h5>Example</h5>
+
+    <pre class="prettyprint"><code>import Menu from 'ya-vue-antd/src/widgets/antd/components/menu';// See <a href="http://#/antd/menu">示例入口</a></code></pre>
+
+</div>
+
+</div>
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div class="section-members">
+<h4 class="name" id=".Menu"><span class="type-signature">(static) </span>Menu<span class="type-signature"> :Vue</span></h4>
+
+
+
+
+<div class="description">
+    </p></div></div> 
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-props">Props</h3>
+<table class="params" data-jsdoc-vuejs="table-props">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required?</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td class="name"><code>defaultOpenKeys</code></td>
+        <td><code>Array.&lt;string></code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>初始展开的 SubMenu 菜单项 key 数组</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>defaultSelectedKeys</code></td>
+        <td><code>Array.&lt;string></code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>初始选中的菜单项 key 数组</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>forceSubMenuRender</code></td>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+        <td>No</td>
+        <td>在子菜单展示之前就渲染进 DOM</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>inlineCollapsed</code></td>
+        <td><code>boolean</code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>inline 时菜单是否收起状态</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>inlineIndent</code></td>
+        <td><code>number</code></td>
+        <td><code>24</code></td>
+        <td>No</td>
+        <td>inline 模式的菜单缩进宽度</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>mode</code></td>
+        <td><code>vertical|horizontal|inline</code></td>
+        <td><code>vertical</code></td>
+        <td>No</td>
+        <td>菜单类型，现在支持垂直、水平、和内嵌模式三种</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>multiple</code></td>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+        <td>No</td>
+        <td>是否允许多选</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>openKeys</code></td>
+        <td><code>Array.&lt;string></code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>当前展开的 SubMenu 菜单项 key 数组</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>selectable</code></td>
+        <td><code>boolean</code></td>
+        <td><code>true</code></td>
+        <td>No</td>
+        <td>是否允许选中</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>selectedKeys</code></td>
+        <td><code>Array.&lt;string></code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>当前选中的菜单项 key 数组</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>style</code></td>
+        <td><code>object</code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>根节点样式</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>subMenuCloseDelay</code></td>
+        <td><code>number</code></td>
+        <td><code>0.1</code></td>
+        <td>No</td>
+        <td>用户鼠标离开子菜单后关闭延时，单位：秒</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>subMenuOpenDelay</code></td>
+        <td><code>number</code></td>
+        <td><code>0</code></td>
+        <td>No</td>
+        <td>用户鼠标进入子菜单后开启延时，单位：秒</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>theme</code></td>
+        <td><code>light|dark</code></td>
+        <td><code>light</code></td>
+        <td>No</td>
+        <td>主题颜色</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>onClick</code></td>
+        <td><code>MenuOnClick</code></td>
+        <td><code>() => void</code></td>
+        <td>No</td>
+        <td>点击 MenuItem 调用此函数，<a href="module-antd_menu.html#~MenuOnClick"><code>MenuOnClick</code></a>，查看<a href="http://#/antd/menu">示例</a></td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>onDeselect</code></td>
+        <td><code>MenuOnDeselect</code></td>
+        <td><code>() => void</code></td>
+        <td>No</td>
+        <td>取消选中时调用，仅在 multiple 生效，<a href="module-antd_menu.html#~MenuOnDeselect"><code>MenuOnDeselect</code></a></td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>onOpenChange</code></td>
+        <td><code>MenuOnOpenChange</code></td>
+        <td><code>() => void</code></td>
+        <td>No</td>
+        <td>SubMenu 展开/关闭的回调，<a href="module-antd_menu.html#~MenuOnOpenChange"><code>MenuOnOpenChange</code></a></td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>onSelect</code></td>
+        <td><code>MenuOnSelect</code></td>
+        <td><code>() => void</code></td>
+        <td>No</td>
+        <td>被选中时调用，<a href="module-antd_menu.html#~MenuOnSelect"><code>MenuOnSelect</code></a></td>
+    </tr>
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="container-overview"><div><p> 
+
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>Vue</code></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members">
+<h4 class="name" id=".MenuItem"><span class="type-signature">(static) </span>MenuItem<span class="type-signature"> :Vue</span></h4>
+
+
+
+
+<div class="description">
+    </p></div></div> 
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-props">Props</h3>
+<table class="params" data-jsdoc-vuejs="table-props">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required?</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td class="name"><code>disabled</code></td>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+        <td>No</td>
+        <td>是否禁用</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>key</code></td>
+        <td><code>string</code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>item 的唯一标志</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>title</code></td>
+        <td><code>string</code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>设置收缩时展示的悬浮标题</td>
+    </tr>
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="container-overview"><div><p> 
+
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>Vue</code></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members">
+<h4 class="name" id=".MenuItemGroup"><span class="type-signature">(static) </span>MenuItemGroup<span class="type-signature"> :Vue</span></h4>
+
+
+
+
+<div class="description">
+    </p></div></div> 
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-props">Props</h3>
+<table class="params" data-jsdoc-vuejs="table-props">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required?</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td class="name"><code>title</code></td>
+        <td><code>string</code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>分组标题</td>
+    </tr>
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="container-overview"><div><p> 
+
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>Vue</code></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members">
+<h4 class="name" id=".SubItem"><span class="type-signature">(static) </span>SubItem<span class="type-signature"> :Vue</span></h4>
+
+
+
+
+<div class="description">
+    </p></div></div> 
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-props">Props</h3>
+<table class="params" data-jsdoc-vuejs="table-props">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required?</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td class="name"><code>disabled</code></td>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+        <td>No</td>
+        <td>是否禁用</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>key</code></td>
+        <td><code>string</code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>item 的唯一标志</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>title</code></td>
+        <td><code>string</code></td>
+        <td>-</td>
+        <td>No</td>
+        <td>设置收缩时展示的悬浮标题</td>
+    </tr>
+    
+    <tr>
+        <td class="name"><code>onTitleClick</code></td>
+        <td><code>SubItemOnTitleClick</code></td>
+        <td><code>() => void</code></td>
+        <td>No</td>
+        <td>点击子菜单标题回调，<a href="module-antd_menu.html#~SubItemOnTitleClick"><code>SubItemOnTitleClick</code></a></td>
+    </tr>
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="container-overview"><div><p> 
+
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>Vue</code></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
+        
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<div class="section-members">
+<h4 class="name" id="~Menu">Menu</h4>
+
+
+
+
+<div class="description">
+    <p>Class</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="antd_components_menu_index.js.html">antd/components/menu/index.js</a>, <a href="antd_components_menu_index.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>Vue</code></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
+            
+                
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~MenuOnClick"><span class="type-signature"></span>MenuOnClick<span class="signature">(data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>点击 MenuItem 调用此函数</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="antd_components_menu_index.js.html">antd/components/menu/index.js</a>, <a href="antd_components_menu_index.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>回调参数</p>
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item key</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>keyPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item key path</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~MenuOnDeselect"><span class="type-signature"></span>MenuOnDeselect<span class="signature">(data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>取消选中时调用，仅在 multiple 生效</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="antd_components_menu_index.js.html">antd/components/menu/index.js</a>, <a href="antd_components_menu_index.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>回调参数</p>
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item key</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectedKeys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;string></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>当前选中的菜单项 key 数组</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~MenuOnOpenChange"><span class="type-signature"></span>MenuOnOpenChange<span class="signature">(openKeys)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>SubMenu 展开/关闭的回调</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="antd_components_menu_index.js.html">antd/components/menu/index.js</a>, <a href="antd_components_menu_index.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>openKeys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;string></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>当前展开的菜单项key</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~MenuOnSelect"><span class="type-signature"></span>MenuOnSelect<span class="signature">(data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>被选中时调用</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="antd_components_menu_index.js.html">antd/components/menu/index.js</a>, <a href="antd_components_menu_index.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>回调参数</p>
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item key</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectedKeys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;string></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>当前选中的菜单项 key 数组</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~SubItemOnTitleClick"><span class="type-signature"></span>SubItemOnTitleClick<span class="signature">(data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>被选中时调用</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="antd_components_menu_index.js.html">antd/components/menu/index.js</a>, <a href="antd_components_menu_index.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>回调参数</p>
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Menu item key</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>domEvent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>HTMLEvent</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>HTML event</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Dec 25 2018 16:46:46 GMT+0800 (China Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

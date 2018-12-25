@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
  * Transform react component to vue component
  */
@@ -9,7 +8,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Vue from 'vue';
-import Item from 'antd/lib/list/Item';
 
 var store = new Map(); // 存储转换过的组件类，不重复生成
 
@@ -84,9 +82,11 @@ class C extends React.Component {
  * @param {object} options - 配置项
  */
 export default function (R, options) {
+  // 父级component的options会覆盖子component的options
   options = {
     defaultProps: {}, // 默认prop
     enableInnerStrip: true, // 默认把Vue children里的文本和react组件直接作为R children渲染
+    excludeNullableStringChildren: false, // 将待转换为react的vue空字符串子节点过滤点，默认不过滤
     ...(options || {})
   };
   var V = store.get(R);
@@ -106,29 +106,34 @@ export default function (R, options) {
             outerClass,
             innerClass,
             reactRef,
+            reactKey,
             ...restAttrs
           } = getNormalizeProps(attrs, options.defaultProps);
           // 组装成react props
           var reactProps = {
             ...restAttrs,
-            ref: reactRef // 重命名react component ref
+            ref: reactRef, // 重命名react component ref
+            key: reactKey // 重命名react component key
           };
           Object.keys(listeners).forEach((eventName) => {
             reactProps['on' + capitalize(eventName)] = listeners[eventName];
           });
           // 短路，把Vue children里的文本和react组件直接作为R children渲染
           let reactChildren = null;
+          // console.log('vue-children', slot);
           if (options.enableInnerStrip) {
             reactChildren = (function applyChildren({
               children,
               innerTag,
               innerClass
             }) {
-              return children ? children.map((child) => {
-                if (typeof child.tag === 'undefined' && typeof child.text === 'undefined') { // 认为是无效vnode
+              const reactChildren = children ? children.map((child) => {
+                const nonNullableChildText = (child.text || '').trim();
+                const childText = options.excludeNullableStringChildren ? (!nonNullableChildText ? undefined : nonNullableChildText) : child.text; // 过滤空字符串子节点
+                if (typeof child.tag === 'undefined' && typeof childText === 'undefined') { // 认为是无效vnode
                   return null;
                 }
-                if (typeof child.tag === 'undefined' && !!child.text) { // 认为是纯文本
+                if (typeof child.tag === 'undefined' && !!childText) { // 认为是纯文本
                   return child.text;
                 } else {
                   const componentOptions = child.componentOptions;
@@ -140,11 +145,13 @@ export default function (R, options) {
                         innerTag,
                         innerClass,
                         reactRef,
+                        reactKey,
                         ...restAttrs
                       } = getNormalizeProps(attrs);
                       return React.createElement(Reactor, {
                         ...restAttrs,
-                        ref: reactRef
+                        ref: reactRef,
+                        key: reactKey
                       }, applyChildren({
                         children: componentOptions.children,
                         innerTag,
@@ -160,13 +167,15 @@ export default function (R, options) {
                   innerClass
                 }, null);
               }).filter((item) => { // 过滤有效vnode
-                return !!Item;
+                return !!item;
               }) : null;
+              // console.log('react-children2', reactChildren);
+              return reactChildren;
             })({
               children: slot,
               innerTag,
               innerClass
-            }); 
+            });
           } else { // 把Vue slot转成 React component再传递给C
             reactChildren = slot ? React.createElement(C, {
               slot,

@@ -1,0 +1,6 @@
+/**
+ * Antd menu style
+ * css文件import不加~,由postcss-import处理 https://github.com/postcss/postcss-import
+ */
+@import "antd/lib/style/index.css";
+@import "antd/lib/menu/style/index.css";
