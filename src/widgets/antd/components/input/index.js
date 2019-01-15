@@ -2,13 +2,13 @@
  * Form（表单）
  * @module antd/form
  * @example
- * import Form from 'ya-vue-antd/src/widgets/antd/components/form';
+ * import Input from 'ya-vue-antd/src/widgets/antd/components/input';
  * // See [示例入口]{@link http://#/antd/form}
  */
 import t from '@/deps/rv/t';
-import Form from 'antd/lib/form';
+import Input from 'antd/lib/input';
 
-export default t(Form, {
+export default t(Input, {
   defaultProps: {
     outerTag: 'span'
   }

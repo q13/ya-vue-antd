@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>index.js - Documentation</title>
+    <title>antd/components/form/index.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">antd/components/form/index.js</h1>
     
 
     
@@ -40,12 +40,20 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Export all components
- * @namespace YC
+ * Form（表单）
+ * @module antd/form
+ * @example
+ * import Form from 'ya-vue-antd/src/widgets/antd/components/form';
+ * // See [示例入口]{@link http://#/antd/form}
  */
-export function register() {
+import t from '@/deps/rv/t';
+import Form from 'antd/lib/form';
 
-}
+export default t(Form, {
+  defaultProps: {
+    outerTag: 'span'
+  }
+});
 </code></pre>
         </article>
     </section>
